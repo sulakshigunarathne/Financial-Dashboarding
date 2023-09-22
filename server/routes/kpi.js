@@ -13,3 +13,5 @@ router.get('/kpi',async(req,res)=>{
     }
 })
 export default router;
+
+//we sent the kpi objects 
