@@ -1,17 +1,17 @@
 import express from 'express'
-import KPI from '../models/kpi.js' 
+import KPI from '../models/kpi_m.js' 
 
 const router = express.Router()
 
-router.get('/kpi',async(req,res)=>{
+router.get('/kpis',async(req,res)=>{
     try{
-        const kpi = await KPI.find()
+        const kpis = await KPI.find()
         res.status(200).json(kpis)
     }
     catch(error){
-        res.status(400).json({message: error.message})
+        res.status(404).json({message: error.message})
     }
 })
 export default router;
 
-//we sent the kpi objects 
+//we sent the kpi objects from databse to front end
