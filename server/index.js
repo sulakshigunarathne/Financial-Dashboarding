@@ -30,7 +30,8 @@ const PORT = process.env.PORT || 9000;
 mongoose
     .connect(process.env.MONGO_URL, {
         useNewUrlParser: true,
-         useUnifiedTopology: true})
+         useUnifiedTopology: true,
+        })
     .then(async() => {
         app.listen(PORT, () => console.log(`Server port: ${PORT}`));
         console.log('MongoDB connected');
